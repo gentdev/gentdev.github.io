@@ -1,0 +1,10 @@
+{
+  "product": "cli-access",
+  "publishable": true,
+  "assets": {
+    "index.html": "8df03cec975f331c0fb2cd7cff58f2aaf3379784b2cc56ccc742daa40aac7cb2",
+    "privacy.html": "362d0ce13c246ba36166009940e515fc8eb8f4048be3882e367dd1716b7db4f7",
+    "styles.css": "3a0fed9cfc67500762b420ac1d7579b474e66bf5a1340e64eebf0f10ef5731e1",
+    "terms.html": "3c00fa3db4e6f1e6afafa2c77e8a15abc9968709bd49047c3a351474ef663de2"
+  }
+}

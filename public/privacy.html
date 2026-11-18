@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How cli-access uses Google account data, stores credentials and outputs, and supports revocation and deletion.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Privacy policy — cli-access</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header shell"><a class="brand" href="./" aria-label="cli-access home"><span class="brand-mark" aria-hidden="true">&gt;_</span>cli-access</a><nav class="nav" aria-label="Main navigation"><a href="./">Home</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav></header>
+  <main id="main" class="document shell" tabindex="-1">
+    <p class="eyebrow">Your data and your choices</p><h1>Privacy policy</h1><p class="date">Last updated 18 November 2026</p>
+    <p>cli-access connects authorized Google accounts to a personal desktop assistant workspace. This policy explains the account connection and the information pages you are reading. Contact the maintainer at <a href="mailto:gentdev@gmail.com">gentdev@gmail.com</a>.</p>
+    <h2>What the integration accesses</h2>
+    <p>Depending on the workflow you request, the integration accesses Calendar events, Gmail metadata and message content, and Drive file metadata and document content. It uses that information for planning, search, summaries, drafts, and account actions you authorize.</p>
+    <p>The current connection requests Drive, Gmail modify, and Calendar permissions. These can allow content changes. The assistant follows its workspace approval rules for external changes; background capability checks use bounded read requests. Review Google’s consent screen before granting access.</p>
+    <h2>How data is processed and shared</h2>
+    <p>The integration runs in the maintainer’s desktop workspace. Google handles sign-in and API requests. When a requested assistant workflow uses an AI service, selected information needed for that workflow may be sent to its configured provider. Processing and retention depend on that provider’s service and account settings.</p>
+    <p>Google account data is used to provide the requested assistant features. It is not sold or used for advertising. The integration does not train general-purpose AI models. A provider used to process Google account data must handle it under the applicable Google user-data policies; it must not use that data to train or improve a general-purpose model.</p>
+    <p>Human access is limited to the account holder, people the account holder authorizes, and access needed for security or legal obligations. Use a workflow only for information you are authorized to send to its configured providers.</p>
+    <h2>What is stored</h2>
+    <p>The Google Workspace CLI stores account credentials locally using its credential protection. Operational checks retain sanitized status metadata. Requested outputs and working notes may remain in the local workspace or a storage destination you explicitly choose until you remove them.</p>
+    <p>Revoking Google access prevents future authorized API access. It does not erase outputs already created or records held by Google or a configured AI provider.</p>
+    <h2>Revocation and deletion</h2>
+    <p>Revoke the connection through <a href="https://myaccount.google.com/connections">your Google Account’s third-party connections settings</a>. Remove local outputs you no longer need. For help with data retained by the maintainer, contact <a href="mailto:gentdev@gmail.com">gentdev@gmail.com</a>. Google and configured AI providers also offer their own privacy controls.</p>
+    <h2>These information pages</h2>
+    <p>This website does not connect to Google APIs and has no account-data collection forms, analytics scripts, or tracking cookies. The hosting service may process connection information needed to serve pages under its own policies.</p>
+    <h2>Google data requirements and policy changes</h2>
+    <p>Google account data must be handled in accordance with the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements, and the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data and developer policy</a>.</p>
+    <p>The maintainer will update this policy when data practices change. Material changes to requested permissions require a new consent decision.</p>
+  </main>
+  <footer class="site-footer shell"><p>cli-access <span aria-hidden="true">/</span> Personal desktop integration</p><nav aria-label="Footer navigation"><a href="./">Home</a><a href="terms.html">Terms</a><a href="mailto:gentdev@gmail.com">Contact</a></nav></footer>
+</body>
+</html>

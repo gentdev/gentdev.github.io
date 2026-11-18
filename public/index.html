@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="cli-access connects a desktop assistant to Google Calendar, Gmail, and Drive for personal planning, search, summaries, and drafts.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>cli-access — Your workspace, from the command line</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header shell">
+    <a class="brand" href="./" aria-label="cli-access home"><span class="brand-mark" aria-hidden="true">&gt;_</span>cli-access</a>
+    <nav class="nav" aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  </header>
+  <main id="main" class="shell" tabindex="-1">
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <p class="eyebrow">A personal desktop integration</p>
+        <h1 id="title">Your workspace, from the command line.</h1>
+        <p class="lead">Connect your desktop assistant to Google Calendar, Gmail, and Drive. Bring context into your planning, find the right source, and prepare work for review.</p>
+        <div class="actions"><a class="button primary" href="#how-it-works">See how it works</a><a class="button" href="privacy.html">Read the privacy policy</a></div>
+      </div>
+      <aside class="terminal" aria-label="Example of a supported read-only command">
+        <div class="terminal-title"><span>DESKTOP WORKSPACE</span><span>Read-only example</span></div>
+        <code><span class="prompt">$ </span>gws calendar calendarList list</code>
+        <p>The Google Workspace CLI supplies the account connection. Your assistant uses the authorized context for the workflow you request.</p>
+      </aside>
+    </section>
+    <section class="section" aria-labelledby="work-title">
+      <h2 id="work-title">Bring the context your work needs.</h2>
+      <p class="section-intro">cli-access is the Google account connection used by a personal desktop assistant. It supports authorized accounts and workflows run from your own workspace.</p>
+      <div class="grid">
+        <article class="card"><span class="number">01 / CALENDAR</span><h3>Plan around your day</h3><p>Read calendar constraints so the assistant can prepare a useful agenda and suggest a next action.</p></article>
+        <article class="card"><span class="number">02 / GMAIL</span><h3>Find the conversation</h3><p>Locate relevant email, retrieve context for a request, and prepare summaries or drafts.</p></article>
+        <article class="card"><span class="number">03 / DRIVE</span><h3>Work from the source</h3><p>Find files and read the document context needed for the task you choose.</p></article>
+      </div>
+    </section>
+    <section class="section" id="how-it-works" aria-labelledby="steps-title">
+      <h2 id="steps-title">How the connection works.</h2>
+      <div class="grid">
+        <article class="card"><h3>Connect your account</h3><p>Use Google’s browser-based sign-in and consent flow. Review the requested permissions before granting access.</p></article>
+        <article class="card"><h3>Choose a workflow</h3><p>Run a planning, search, summary, or drafting request in your desktop workspace. Selected context may be processed by the AI provider configured for that workflow.</p></article>
+        <article class="card"><h3>Review the result</h3><p>Check drafts against their sources. Actions that change account content follow the workspace’s user-instruction and approval rules.</p></article>
+      </div>
+    </section>
+    <section class="section boundary" aria-labelledby="access-title">
+      <div><h2 id="access-title">Understand the access you grant.</h2><p class="quiet">The current connection requests Drive, Gmail modify, and Calendar permissions. These can permit content changes as well as reads. Workspace approval rules govern how the assistant uses that access.</p><a href="privacy.html">Read about data use and storage</a></div>
+      <div><ul><li>Google handles authentication; cli-access does not ask for your Google password.</li><li>Account connections run in the desktop integration. This information website does not connect to Google APIs.</li><li>You can revoke access in your Google Account at any time.</li></ul><a href="https://myaccount.google.com/connections">Manage your Google connections</a></div>
+    </section>
+  </main>
+  <footer class="site-footer shell"><p>cli-access <span aria-hidden="true">/</span> Personal desktop integration</p><nav aria-label="Footer navigation"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="mailto:gentdev@gmail.com">Contact</a></nav></footer>
+</body>
+</html>

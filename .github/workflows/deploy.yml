@@ -1,0 +1,64 @@
+name: Publish cli-access information
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: Exact reviewed master commit to publish
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'gentdev/gentdev.github.io' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify reviewed head and public artifact
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_SHA" = "$EXPECTED_SHA"
+          test -z "$(git status --porcelain)"
+          git fetch origin master
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/master)"
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          const names = ['index.html', 'privacy.html', 'styles.css', 'terms.html'];
+          const release = JSON.parse(fs.readFileSync('release.json', 'utf8'));
+          assert.equal(release.product, 'cli-access');
+          assert.equal(release.publishable, true, 'Review bundles cannot be published');
+          assert.deepEqual(fs.readdirSync('public').sort(), names);
+          assert.deepEqual(Object.keys(release.assets).sort(), names);
+          for (const name of names) {
+            assert.ok(fs.lstatSync(`public/${name}`).isFile());
+            const hash = crypto.createHash('sha256').update(fs.readFileSync(`public/${name}`)).digest('hex');
+            assert.equal(hash, release.assets[name], `Unreviewed content: ${name}`);
+          }
+          console.log('PASS: reviewed public artifact');
+          JS
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+      - name: Publish verified artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
